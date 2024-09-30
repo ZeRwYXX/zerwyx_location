@@ -1,0 +1,11 @@
+{
+    "menu_title": "Vehicle Rental",
+    "rent_button": "Rent",
+    "close_button": "Close",
+    "notification_success": "Success",
+    "notification_error": "Error",
+    "bank_success": "You paid $%s from your bank account.",
+    "bank_error": "You do not have enough money in your bank account.",
+    "cash_success": "You paid $%s in cash.",
+    "cash_error": "You do not have enough cash."
+}

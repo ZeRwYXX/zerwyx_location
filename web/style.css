@@ -1,0 +1,158 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+ 
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.menu {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    max-width: 700px;
+}
+
+#vehicleList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.vehicle {
+    background-color: #f7f7f7;
+    border: 2px solid #ececec;
+    border-radius: 8px;
+    padding: 15px;
+    width: 150px;
+    text-align: center;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.vehicle:hover {
+    transform: translateY(-5px);
+    background-color: #eaeaea;
+}
+
+.vehicle img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.vehicle span {
+    display: block;
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.vehicle button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.vehicle button:hover {
+    background-color: #0056b3;
+}
+
+.close-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.close-button:hover {
+    background-color: #c82333;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 9999;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+}
+
+.notification-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.notification.success {
+    border-left: 5px solid #28a745;
+}
+
+.notification.success .notification-icon {
+    color: #28a745;
+}
+
+.notification.error {
+    border-left: 5px solid #dc3545;
+}
+
+.notification.error .notification-icon {
+    color: #dc3545;
+}
+
+.notification.warning {
+    border-left: 5px solid #ffc107;
+}
+
+.notification.warning .notification-icon {
+    color: #ffc107;
+}
+
+.notification.info {
+    border-left: 5px solid #17a2b8;
+}
+
+.notification.info .notification-icon {
+    color: #17a2b8;
+}
+
+.notification-message {
+    flex: 1;
+}
+
+.notification.hidden {
+    opacity: 0;
+    pointer-events: none;
+}

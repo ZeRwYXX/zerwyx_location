@@ -1,0 +1,11 @@
+{
+    "menu_title": "Location de Véhicules",
+    "rent_button": "Louer",
+    "close_button": "Fermer",
+    "notification_success": "Succès",
+    "notification_error": "Erreur",
+    "bank_success": "Vous avez payé $%s depuis votre compte bancaire.",
+    "bank_error": "Vous n'avez pas assez d'argent sur votre compte bancaire.",
+    "cash_success": "Vous avez payé $%s en espèces.",
+    "cash_error": "Vous n'avez pas assez d'argent liquide."
+}
