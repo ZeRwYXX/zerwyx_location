@@ -87,32 +87,51 @@ end)
 RegisterNetEvent("zerwyx_location:spawnVehicle")
 AddEventHandler("zerwyx_location:spawnVehicle", function(model, spawnLocation)
     local playerPed = PlayerPedId()
-    local spawnPos = vector3(spawnLocation.x, spawnLocation.y, spawnLocation.z)
-    local heading = spawnLocation.w
-    local modelHash = GetHashKey(model)
+    local playerCoords = GetEntityCoords(playerPed)
 
-    RequestModel(modelHash)
-    local attempt = 0
-    
-    while not HasModelLoaded(modelHash) and attempt < 50 do
-        Citizen.Wait(100)
-        attempt = attempt + 1
+    -- Calculer la distance entre le joueur et chaque spawnLocation
+    local closestSpawn = nil
+    local minDistance = nil
+
+    for _, location in pairs(Config.PedLocations) do
+        local distance = #(playerCoords - vector3(location.spawnVehicle.x, location.spawnVehicle.y, location.spawnVehicle.z))
+
+        if not minDistance or distance < minDistance then
+            minDistance = distance
+            closestSpawn = location.spawnVehicle
+        end
     end
 
-    if HasModelLoaded(modelHash) then
-        local vehicle = CreateVehicle(modelHash, spawnPos.x, spawnPos.y, spawnPos.z, heading, true, false)
-        TaskWarpPedIntoVehicle(playerPed, vehicle, -1)
-        
-        SetNuiFocus(false, false)
-        SendNUIMessage({ action = "closeMenu" })
+    if closestSpawn then
+        local spawnPos = vector3(closestSpawn.x, closestSpawn.y, closestSpawn.z)
+        local heading = closestSpawn.w
+        local modelHash = GetHashKey(model)
 
-        local plate = GetVehicleNumberPlateText(vehicle)
+        RequestModel(modelHash)
+        local attempt = 0
         
-       -- exports['ak47_vehiclekeys']:GiveVirtualKey(plate)
+        while not HasModelLoaded(modelHash) and attempt < 50 do
+            Citizen.Wait(100)
+            attempt = attempt + 1
+        end
+
+        if HasModelLoaded(modelHash) then
+            local vehicle = CreateVehicle(modelHash, spawnPos.x, spawnPos.y, spawnPos.z, heading, true, false)
+            TaskWarpPedIntoVehicle(playerPed, vehicle, -1)
+            
+            SetNuiFocus(false, false)
+            SendNUIMessage({ action = "closeMenu" })
+
+            local plate = GetVehicleNumberPlateText(vehicle)
+            
+           -- exports['ak47_vehiclekeys']:GiveVirtualKey(plate)
+        else
+            print(_U('vehicle_spawn_error')) 
+            SetNuiFocus(false, false)
+            SendNUIMessage({ action = "closeMenu" }) 
+        end
     else
-        print(_U('vehicle_spawn_error')) 
-        SetNuiFocus(false, false)
-        SendNUIMessage({ action = "closeMenu" }) 
+        print("Erreur : Aucun point de spawn trouvé.")
     end
 end)
 
