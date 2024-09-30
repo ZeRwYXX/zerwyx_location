@@ -176,7 +176,7 @@ Config.Translations = {
    - Change `sprite`, `color`, `scale`, `display`, and `text` to your liking.
 
 ## Troubleshooting
-- Ensure you have the required dependencies installed (`es_extended`, `ox_target`, `ak47_vehiclekeys`).
+- Ensure you have the required dependencies installed (`es_extended`, `ox_target`).
 - If blips or NPCs are not showing up, check your configuration for any errors or missing data.
 - Verify that your `fxmanifest.lua` includes the necessary files.
 
