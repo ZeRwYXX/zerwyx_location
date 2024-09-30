@@ -1,3 +1,12 @@
+# Images
+
+## Notify
+![image](https://github.com/user-attachments/assets/b95cef43-f4f6-4163-8586-80b5f87e6495)
+
+## Menu
+![image](https://github.com/user-attachments/assets/12236012-2347-4120-afac-7a5f3b45a2f0)
+
+
 
 # Vehicle Rental Script
 
