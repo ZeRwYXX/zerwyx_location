@@ -1,3 +1,9 @@
+# Images
+
+
+![image](https://github.com/user-attachments/assets/b7a3e294-60e7-4c3d-8459-2af271e3b830)
+![image](https://github.com/user-attachments/assets/d13b4426-3317-4378-9166-f428464f0103)
+
 
 # Vehicle Rental Script
 
