@@ -1,21 +1,36 @@
+/* Style général */
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
- 
     margin: 0;
     font-family: Arial, sans-serif;
+    color: #fff;
 }
 
 .menu {
-    background-color: #fff;
+    background-color: #1f1f1f;
     padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    width: 60%;
-    max-width: 700px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    height: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#menuTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
 }
 
 #vehicleList {
@@ -23,27 +38,33 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    width: 100%;
 }
 
 .vehicle {
-    background-color: #f7f7f7;
-    border: 2px solid #ececec;
-    border-radius: 8px;
+    background-color: #2b2b2b;
+    border: 1px solid #333;
+    border-radius: 10px;
     padding: 15px;
-    width: 150px;
+    width: 200px;
     text-align: center;
-    transition: transform 0.2s, background-color 0.2s;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .vehicle:hover {
     transform: translateY(-5px);
-    background-color: #eaeaea;
+    background-color: #353535;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .vehicle img {
     width: 100%;
     height: auto;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .vehicle span {
@@ -51,46 +72,48 @@ body {
     margin: 10px 0;
     font-size: 14px;
     font-weight: bold;
-    color: #333;
+    color: #fff;
 }
 
 .vehicle button {
-    background-color: #007bff;
+    background-color: #ff4c4c;
     color: white;
     border: none;
     border-radius: 4px;
     padding: 8px 12px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
+    margin-top: auto;
 }
 
 .vehicle button:hover {
-    background-color: #0056b3;
+    background-color: #ff3333;
 }
 
 .close-button {
-    background-color: #dc3545;
+    background-color: #ff4c4c;
     color: white;
     border: none;
     padding: 10px 15px;
-    margin-top: 20px;
-    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 16px;
 }
 
 .close-button:hover {
-    background-color: #c82333;
+    background-color: #ff3333;
 }
 
 .hidden {
     display: none;
 }
-
 
 .notification-container {
     position: fixed;
@@ -109,6 +132,7 @@ body {
     margin-bottom: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: opacity 0.3s ease;
+    color: #000; /* Texte en noir */
 }
 
 .notification-icon {
